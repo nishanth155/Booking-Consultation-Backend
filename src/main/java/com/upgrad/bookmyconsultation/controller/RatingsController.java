@@ -16,9 +16,9 @@ public class RatingsController {
 	private RatingsService ratingsService;
 
 	@PostMapping
-	public ResponseEntity.BodyBuilder submitRatings(@RequestBody Rating rating){
+	public ResponseEntity<Object> submitRatings(@RequestBody Rating rating){
 		ratingsService.submitRatings(rating);
-		return ResponseEntity.status(200);
+		return ResponseEntity.ok().build();
 	}
 	//create a post method named submitRatings with return type as ResponseEntity
 		//define the method parameter rating of type Rating, use @RequestBody for mapping

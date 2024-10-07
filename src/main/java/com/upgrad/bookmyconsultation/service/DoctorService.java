@@ -43,6 +43,8 @@ public class DoctorService {
 
 		Address address = doctor.getAddress();
 
+		address.setId(doctor.getId());
+
 		Address savedAddress = addressRepository.save(address);
 
 		doctor.setAddress(savedAddress);
